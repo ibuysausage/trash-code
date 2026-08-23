@@ -39,4 +39,5 @@ jobs:
           echo "Merging PR #$PR"
 
           gh pr merge "$PR" \
+            --repo "${{ github.repository }}" \
             --squash
