@@ -24,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.FLAKE_LOCK_PAT }}
           MERGE_COMMIT_MESSAGE: "pull-request-title"
           MERGE_FORKS: "false"
-          MERGE_LABELS: ""
+          MERGE_LABELS: "automated"
