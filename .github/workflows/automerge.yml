@@ -21,6 +21,8 @@ jobs:
       - name: Find and merge automated PR
         env:
           GH_TOKEN: ${{ secrets.FLAKE_LOCK_PAT }}
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_METHOD: "squash"
         run: |
           PR=$(gh pr list \
             --repo "${{ github.repository }}" \
