@@ -23,6 +23,7 @@ jobs:
           GH_TOKEN: ${{ secrets.FLAKE_LOCK_PAT }}
         run: |
           PR=$(gh pr list \
+            --repo "${{ github.repository }}" \
             --state open \
             --label automated \
             --json number \
@@ -36,5 +37,4 @@ jobs:
           echo "Merging PR #$PR"
 
           gh pr merge "$PR" \
-            --squash \
-            --auto
+            --squash
