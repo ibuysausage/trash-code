@@ -15,7 +15,6 @@
         {
           alignment = "left";
           segments = [
-            # user
             {
               type = "session";
               style = "powerline";
@@ -24,7 +23,6 @@
               background = "#4C566A";
               template = " ${icon "f007"} {{ .UserName }} ";
             }
-            # path
             {
               type = "path";
               style = "powerline";
@@ -32,15 +30,13 @@
               foreground = "#ECEFF4";
               background = "#5E81AC";
               options = {
-                style = "agnoster_short";
-                folder_icon = icon "f115";
-                home_icon = icon "f7db";
+                style = "full";
+                folder_icon = icon "f07b";
+                home_icon = icon "f015";
                 folder_separator_icon = " ${icon "e0b1"} ";
               };
               template = " {{ .Path }} ";
             }
-            # git — branch, ahead/behind, staged/working, stash, and the
-            # upstream icon auto-detects GitHub/GitLab/Bitbucket from the remote
             {
               type = "git";
               style = "powerline";
@@ -61,7 +57,6 @@
               };
               template = " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} ${icon "f044"}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} ${icon "f046"}{{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} ${icon "f692"} {{ .StashCount }}{{ end }} ";
             }
-            # rust — version/toolchain, only shows in a Cargo/rust dir
             {
               type = "rust";
               style = "powerline";
@@ -70,7 +65,6 @@
               background = "#D08770";
               template = " ${icon "e7a8"} {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ";
             }
-            # execution time — only shows past the threshold, no clutter on fast commands
             {
               type = "executiontime";
               style = "powerline";
@@ -83,7 +77,6 @@
               };
               template = " ${icon "f017"} {{ .FormattedMs }} ";
             }
-            # last exit code — hidden unless the previous command failed
             {
               type = "status";
               style = "powerline";
@@ -98,7 +91,6 @@
           ];
           type = "prompt";
         }
-        # second line: clean prompt char, green on success / red after a failure
         {
           alignment = "left";
           newline = true;
