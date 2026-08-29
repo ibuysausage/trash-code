@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  env.DEVSHELL_NAME = "🦀 projects/#de5b44";
   packages = with pkgs; [
     git
   ];
